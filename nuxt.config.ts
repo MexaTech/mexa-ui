@@ -21,12 +21,4 @@ export default defineNuxtConfig({
       }),
     ],
   },
-  hooks: {
-    "components:dirs"(dirs) {
-      dirs.push({
-        path: join(__dirname, "components"),
-        prefix: "mexa",
-      });
-    },
-  },
 });
