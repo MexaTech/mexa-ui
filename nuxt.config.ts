@@ -11,14 +11,14 @@ export default defineNuxtConfig({
   build: {
     transpile: ["primevue"],
   },
-  vite: {
-    plugins: [
-      Components({
-        extensions: ["vue"],
-        include: [/\.vue$/, /\.vue\?vue/],
-        dts: "src/components.d.ts",
-        dirs: ["src/**/*", "node_modules/primevue/**/*"],
-      }),
-    ],
-  },
+  //   vite: {
+  //     plugins: [
+  //       Components({
+  //         extensions: ["vue"],
+  //         include: [/\.vue$/, /\.vue\?vue/],
+  //         dts: "src/components.d.ts",
+  //         dirs: ["src/**/*", "node_modules/primevue/**/*"],
+  //       }),
+  //     ],
+  //   },
 });

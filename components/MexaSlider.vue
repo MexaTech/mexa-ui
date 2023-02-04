@@ -3,7 +3,7 @@
     <h5>Basic: {{ value1 }}</h5>
     <Slider v-model="value1" />
 
-    <h5>Input: {{ value2 }}</h5>
+    <!-- <h5>Input: {{ value2 }}</h5>
     <InputText v-model.number="value2" />
     <Slider v-model="value2" />
 
@@ -17,17 +17,17 @@
     <Slider v-model="value5" :range="true" />
 
     <h5>Vertical: {{ value6 }}</h5>
-    <Slider v-model="value6" orientation="vertical" />
+    <Slider v-model="value6" orientation="vertical" /> -->
   </div>
 </template>
 
 <script setup>
 const value1 = ref(null);
-const value2 = ref(50);
-const value3 = ref(20);
-const value4 = ref(30.5);
-const value5 = ref([20, 80]);
-const value6 = ref(50);
+// const value2 = ref(50);
+// const value3 = ref(20);
+// const value4 = ref(30.5);
+// const value5 = ref([20, 80]);
+// const value6 = ref(50);
 </script>
 
 <style scoped>
