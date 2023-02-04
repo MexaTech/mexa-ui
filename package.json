@@ -1,10 +1,10 @@
 {
   "name": "@mexatech/ui",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@mexatech"
   },
-  "main":"nuxt.config.ts",
+  "main":"ui.js",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
