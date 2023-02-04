@@ -4,6 +4,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@mexatech"
   },
+  "main":"nuxt.config.ts",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
