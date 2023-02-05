@@ -1,33 +1,17 @@
 <template>
   <div>
     <h5>Basic: {{ value1 }}</h5>
+    <pre>{{ value2 }}</pre>
     <Slider v-model="value1" />
-
-    <!-- <h5>Input: {{ value2 }}</h5>
-    <InputText v-model.number="value2" />
-    <Slider v-model="value2" />
-
-    <h5>Step: {{ value3 }}</h5>
-    <Slider v-model="value3" :step="20" />
-
-    <h5>Decimal Step: {{ value4 }}</h5>
-    <Slider v-model="value4" :step="0.5" />
-
-    <h5>Range: {{ value5 }}</h5>
-    <Slider v-model="value5" :range="true" />
-
-    <h5>Vertical: {{ value6 }}</h5>
-    <Slider v-model="value6" orientation="vertical" /> -->
   </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
 const value1 = ref(null);
-// const value2 = ref(50);
-// const value3 = ref(20);
-// const value4 = ref(30.5);
-// const value5 = ref([20, 80]);
-// const value6 = ref(50);
+const value2 = ref({
+  payload: "hola",
+});
 </script>
 
 <style scoped>

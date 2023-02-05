@@ -3,6 +3,7 @@ import { join } from "pathe";
 import Components from "unplugin-vue-components/vite";
 
 export default defineNuxtConfig({
+  ssr: false,
   css: [
     "primevue/resources/themes/saga-blue/theme.css",
     "primevue/resources/primevue.css",
@@ -11,6 +12,7 @@ export default defineNuxtConfig({
   build: {
     transpile: ["primevue"],
   },
+  plugins: [{ src: "~/plugins/primevue.js", mode: "client" }],
   //   vite: {
   //     plugins: [
   //       Components({
@@ -22,3 +24,7 @@ export default defineNuxtConfig({
   //     ],
   //   },
 });
+
+// module.exports = {
+//   plugins: [{ src: "~/plugins/index.js", mode: "client" }],
+// };
