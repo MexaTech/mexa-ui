@@ -2,7 +2,7 @@
   <div>
     <h5>Basic: {{ value1 }}</h5>
     <pre>{{ value2 }}</pre>
-    <!-- <Slider v-model="value1" /> -->
+    <Slider v-model="value1" />
   </div>
 </template>
 
