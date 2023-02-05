@@ -1,14 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-// import { join } from "pathe";
-// import { defineNuxtModule } from "@nuxt/kit";
+import { join } from "pathe";
+import { defineNuxtModule } from "@nuxt/kit";
 
-// export default defineNuxtModule({
-//   hooks: {
-//     "components:dirs"(dirs) {
-//       dirs.push({
-//         path: join(__dirname, "components"),
-//         prefix: "mexa",
-//       });
-//     },
-//   },
-// });
+export default defineNuxtModule({
+  hooks: {
+    "components:dirs"(dirs) {
+      dirs.push({
+        path: join(__dirname, "components"),
+        prefix: "mexa",
+      });
+    },
+  },
+});
