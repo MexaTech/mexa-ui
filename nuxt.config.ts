@@ -3,6 +3,7 @@ import { join } from "pathe";
 import Components from "unplugin-vue-components/vite";
 
 export default defineNuxtConfig({
+  ssr: false,
   css: [
     "primevue/resources/themes/saga-blue/theme.css",
     "primevue/resources/primevue.css",
