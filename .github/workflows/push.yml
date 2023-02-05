@@ -3,7 +3,7 @@ name: publish-to-npm
 on:
   push:
     branches:
-      - chore/ed-test-publish-package
+      - main
 
 jobs:
   build-and-push:
