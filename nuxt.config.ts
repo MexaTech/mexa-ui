@@ -13,18 +13,4 @@ export default defineNuxtConfig({
     transpile: ["primevue"],
   },
   plugins: [{ src: "~/plugins/primevue.js", mode: "client" }],
-  //   vite: {
-  //     plugins: [
-  //       Components({
-  //         extensions: ["vue"],
-  //         include: [/\.vue$/, /\.vue\?vue/],
-  //         dts: "src/components.d.ts",
-  //         dirs: ["src/**/*", "node_modules/primevue/**/*"],
-  //       }),
-  //     ],
-  //   },
 });
-
-// module.exports = {
-//   plugins: [{ src: "~/plugins/index.js", mode: "client" }],
-// };
