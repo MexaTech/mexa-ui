@@ -8,6 +8,8 @@ import AvatarGroup from "primevue/avatargroup";
 import Button from "primevue/button";
 import InputText from "primevue/inputtext";
 import Checkbox from "primevue/checkbox";
+import ToastService from "primevue/toastservice";
+import Toast from "primevue/toast";
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp
@@ -19,5 +21,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     .component("AvatarGroup", AvatarGroup)
     .component("Button", Button)
     .component("InputText", InputText)
-    .component("Checkbox", Checkbox);
+    .component("Checkbox", Checkbox)
+    .component("ToastService", ToastService)
+    .component("Toast", Toast);
 });
