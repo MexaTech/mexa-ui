@@ -10,6 +10,7 @@ import InputText from "primevue/inputtext";
 import Checkbox from "primevue/checkbox";
 import ToastService from "primevue/toastservice";
 import Toast from "primevue/toast";
+import Sidebar from "primevue/sidebar";
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp
@@ -23,5 +24,6 @@ export default defineNuxtPlugin((nuxtApp) => {
     .component("InputText", InputText)
     .component("Checkbox", Checkbox)
     .component("ToastService", ToastService)
-    .component("Toast", Toast);
+    .component("Toast", Toast)
+    .component("Sidebar", Sidebar);
 });
