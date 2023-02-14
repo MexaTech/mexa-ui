@@ -1,23 +1,16 @@
 <template lang="">
-  <div class="flex align-items-center justify-content-center">
+  <section class="flex align-items-center justify-content-center">
     <div class="surface-card p-4 shadow-2 border-round w-full lg:w-3 mt-8">
       <div class="text-center mb-5">
         <img :src="src" :alt="alt" :class="class" />
         <div class="text-900 text-3xl font-medium mb-3 font-sans">
-          Sign in to your account
+          Create an account
         </div>
-        <span class="text-600 font-medium line-height-3"
-          >Don't have an account?</span
-        >
-
-        <router-link
-          to="/forms/registration"
-          class="font-bold no-underline ml-2 text-primary-800 cursor-pointer"
-          >Create new!</router-link
-        >
       </div>
 
       <div>
+        <label for="Name" class="block text-900 font-medium mb-2">Name</label>
+        <InputText id="Name" type="text" class="w-full mb-3" />
         <label for="email1" class="block text-900 font-medium mb-2"
           >Email</label
         >
@@ -27,6 +20,10 @@
           >Password</label
         >
         <InputText id="password1" type="password" class="w-full mb-3" />
+        <label for="password1" class="block text-900 font-medium mb-2"
+          >Repeat Password</label
+        >
+        <InputText id="password2" type="password" class="w-full mb-3" />
 
         <div class="flex align-items-center justify-content-between mb-6">
           <div class="flex align-items-center">
@@ -38,10 +35,6 @@
             ></Checkbox>
             <label for="rememberme1">Remember me</label>
           </div>
-          <a
-            class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer"
-            >Forgot password?</a
-          >
         </div>
       </div>
       <Button
@@ -49,10 +42,24 @@
         aria-label="Sign in"
       >
         <i class="pi pi-lock px-2"></i>
-        <span class="px-3 text-center">Sign in</span>
+        <span class="px-3 text-center">Sign up</span>
       </Button>
+      <hr class="mt-5" />
+      <div class="mt-3 text-center">
+        <p>Or continue with</p>
+        <Button icon="pi pi-facebook" class="p-button-rounded bg-blue-600" />
+        <Button icon="pi pi-google" class="ml-5 p-button-rounded bg-red-600" />
+      </div>
+      <div class="text-center mt-5">
+        <p>By creating an account you agree our terms</p>
+        <router-link
+          to="/forms/registration"
+          class="font-bold no-underline ml-2 text-primary-800 cursor-pointer"
+          >Terms of service</router-link
+        >
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
