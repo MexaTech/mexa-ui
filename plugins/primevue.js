@@ -7,7 +7,7 @@ import Checkbox from "primevue/checkbox";
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp
-    .use(PrimeVue)
+    .use(PrimeVue, { ripple: true })
     .component("Slider", Slider)
     .component("Button", Button)
     .component("InputText", InputText)
