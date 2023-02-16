@@ -2,14 +2,19 @@
   <div>
     <Sidebar v-model:visible="visible" :baseZIndex="10000">
       <div class="profile-data">
-        <mexa-avatar />
-        <h3>Edson Fernando</h3>
+        <mexa-avatar
+          :type="avatar.type"
+          :title="avatar.title"
+          :shape="avatar.shape"
+        />
+        <h3>{{ username }}</h3>
         <Button
           type="button"
           label="Profile"
           badge="8"
           icon="pi pi-users"
           class="p-button-primary"
+          @click="navigateTo"
         />
       </div>
       <div class="menu">
@@ -20,10 +25,23 @@
 </template>
 <script setup>
 import MexaAvatar from "@/components/Avatars/MexaAvatar.vue";
+const router = useRouter();
 const props = defineProps({
   active: {
     type: Boolean,
     default: false,
+  },
+  username: {
+    type: String,
+    default: "username",
+  },
+  avatar: {
+    type: Object,
+    default: {
+      type: "icon",
+      title: "pi pi-user",
+      shape: "",
+    },
   },
   items: {
     type: Array,
@@ -71,6 +89,10 @@ const statusSidebar = computed({
     return props.active;
   },
 });
+
+const navigateTo = () => {
+  router.push("/test");
+};
 
 watch(
   statusSidebar,

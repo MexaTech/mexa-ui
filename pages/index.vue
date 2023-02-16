@@ -5,11 +5,22 @@
       @click="visibleSidebar = !visibleSidebar"
       class="mr-2"
     />
-    <mexa-sidebar :active="visibleSidebar" :items="navigation" />
+    <mexa-sidebar
+      :active="visibleSidebar"
+      :username="username"
+      :avatar="avatar"
+      :items="navigation"
+    />
   </div>
 </template>
 <script setup>
 const visibleSidebar = ref(false);
+const username = ref("Edson");
+const avatar = ref({
+  type: "image",
+  title: "https://via.placeholder.com/300",
+  shape: "circle",
+});
 const navigation = ref([
   {
     key: "1",
@@ -53,10 +64,17 @@ const navigation = ref([
             key: "2_2_1",
             icon: "pi pi-fw pi-bars",
             label: "List",
+            command: () => {
+              log_out();
+            },
           },
         ],
       },
     ],
   },
 ]);
+
+const log_out = () => {
+  console.log("log out...");
+};
 </script>
