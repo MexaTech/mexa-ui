@@ -19,6 +19,7 @@
   </Menubar>
 </template>
 <script setup>
+const emit = defineEmits(["search_data"]);
 const props = defineProps({
   image: {
     type: Object,
@@ -28,30 +29,11 @@ const props = defineProps({
       height: "40",
     },
   },
-  //   search: {
-  //     type: String,
-  //     default: "",
-  //   },
 });
 const search = ref("");
-// const searchValue = ref("");
-
-// const search_input = computed({
-//   get() {
-//     return props.search;
-//   },
-// });
-
-// watch(
-//   search_input,
-//   async () => {
-//     console.log(search_input.value);
-//   },
-//   { immediate: true }
-// );
 
 const searching = () => {
-  console.log(search.value);
+  emit("search_data", search);
 };
 
 const items = ref([
