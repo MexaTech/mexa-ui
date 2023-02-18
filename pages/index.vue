@@ -1,10 +1,11 @@
 <template>
   <div>
-    <Button
+    <mexa-menubar @search_data="search" :image="image" :items="items" />
+    <!-- <Button
       icon="pi pi-arrow-right"
       @click="visibleSidebar = !visibleSidebar"
       class="mr-2"
-    />
+    /> -->
     <mexa-sidebar
       :active="visibleSidebar"
       :username="username"
@@ -77,4 +78,96 @@ const navigation = ref([
 const log_out = () => {
   console.log("log out...");
 };
+
+const data = ref([
+  {
+    id: 1,
+    name: "Ana",
+  },
+  {
+    id: 2,
+    name: "Emilia",
+  },
+  {
+    id: 3,
+    name: "Ilse",
+  },
+]);
+const data_filter = ref();
+const search_input = ref("");
+
+data_filter.value = data.value;
+
+const search = (input) => {
+  search_input.value = input.value;
+  if (search_input.value == "") {
+    data_filter.value = data.value;
+  } else {
+    const list_filter = data.value.filter((element) => {
+      return element.name
+        .toLowerCase()
+        .includes(search_input.value.toLowerCase());
+    });
+    data_filter.value = list_filter;
+  }
+};
+
+const image = ref({
+  alt: "logo",
+  src: "http://caribbeandigitalgroup.com/CDG.svg",
+  height: "40",
+});
+
+const items = ref([
+  {
+    label: "Menu",
+    icon: "pi pi-table",
+    command: () => {
+      visibleSidebar.value = !visibleSidebar.value;
+    },
+  },
+  {
+    label: "External Link",
+    icon: "pi pi-star",
+    url: "https://vuejs.org/",
+  },
+  {
+    label: "Users",
+    icon: "pi pi-fw pi-user",
+    items: [
+      {
+        label: "New",
+        icon: "pi pi-fw pi-user-plus",
+      },
+      {
+        label: "Delete",
+        icon: "pi pi-fw pi-user-minus",
+      },
+      {
+        label: "Search",
+        icon: "pi pi-fw pi-users",
+        items: [
+          {
+            label: "Filter",
+            icon: "pi pi-fw pi-filter",
+            items: [
+              {
+                label: "Print",
+                icon: "pi pi-fw pi-print",
+              },
+            ],
+          },
+          {
+            icon: "pi pi-fw pi-bars",
+            label: "List",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    label: "Quit",
+    icon: "pi pi-fw pi-power-off",
+  },
+]);
 </script>

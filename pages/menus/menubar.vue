@@ -25,6 +25,9 @@ const data = ref([
 ]);
 const data_filter = ref();
 const search_input = ref("");
+
+data_filter.value = data.value;
+
 const search = (input) => {
   search_input.value = input.value;
   if (search_input.value == "") {
