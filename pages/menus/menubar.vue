@@ -1,5 +1,5 @@
 <template>
-  <mexa-menubar @search_data="search" />
+  <mexa-menubar @search_data="search" :image="image" :items="items" />
   <pre>
     {{ search_input }}
   </pre>
@@ -38,4 +38,112 @@ const search = (input) => {
     data_filter.value = list_filter;
   }
 };
+
+const image = ref({
+  alt: "logo",
+  src: "http://caribbeandigitalgroup.com/CDG.svg",
+  height: "40",
+});
+
+const items = ref([
+  {
+    label: "File",
+    icon: "pi pi-fw pi-file",
+    items: [
+      {
+        label: "New",
+        icon: "pi pi-fw pi-plus",
+        items: [
+          {
+            label: "Bookmark",
+            icon: "pi pi-fw pi-bookmark",
+          },
+          {
+            label: "Video",
+            icon: "pi pi-fw pi-video",
+          },
+        ],
+      },
+      {
+        label: "Delete",
+        icon: "pi pi-fw pi-trash",
+      },
+      {
+        separator: true,
+      },
+      {
+        label: "Export",
+        icon: "pi pi-fw pi-external-link",
+      },
+    ],
+  },
+  {
+    label: "Users",
+    icon: "pi pi-fw pi-user",
+    items: [
+      {
+        label: "New",
+        icon: "pi pi-fw pi-user-plus",
+      },
+      {
+        label: "Delete",
+        icon: "pi pi-fw pi-user-minus",
+      },
+      {
+        label: "Search",
+        icon: "pi pi-fw pi-users",
+        items: [
+          {
+            label: "Filter",
+            icon: "pi pi-fw pi-filter",
+            items: [
+              {
+                label: "Print",
+                icon: "pi pi-fw pi-print",
+              },
+            ],
+          },
+          {
+            icon: "pi pi-fw pi-bars",
+            label: "List",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    label: "Events",
+    icon: "pi pi-fw pi-calendar",
+    items: [
+      {
+        label: "Edit",
+        icon: "pi pi-fw pi-pencil",
+        items: [
+          {
+            label: "Save",
+            icon: "pi pi-fw pi-calendar-plus",
+          },
+          {
+            label: "Delete",
+            icon: "pi pi-fw pi-calendar-minus",
+          },
+        ],
+      },
+      {
+        label: "Archieve",
+        icon: "pi pi-fw pi-calendar-times",
+        items: [
+          {
+            label: "Remove",
+            icon: "pi pi-fw pi-calendar-minus",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    label: "Quit",
+    icon: "pi pi-fw pi-power-off",
+  },
+]);
 </script>
