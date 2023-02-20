@@ -1,5 +1,8 @@
 <template>
-  <div>
-    <mexa-slider />
-  </div>
+  <mexa-title />
 </template>
+<script setup>
+definePageMeta({
+  layout: "default",
+});
+</script>

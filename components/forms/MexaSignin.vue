@@ -1,21 +1,16 @@
 <template lang="">
-  <div class="flex justify-center">
-    <div
-      class="surface-card p-4 shadow-2 border-round w-full lg:w-4 mt-5 mx-auto"
-    >
+  <div class="flex align-items-center justify-content-center">
+    <div class="surface-card p-4 shadow-2 border-round w-full lg:w-3 mt-8">
       <div class="text-center mb-5">
-        <img
-          src="images/blocks/logos/hyper.svg"
-          alt="Image"
-          height="50"
-          class="mb-3"
-        />
-        <div class="text-900 text-3xl font-medium mb-3">Welcome Back</div>
+        <img :src="src" :alt="alt" :class="class" />
+        <div class="text-900 text-3xl font-medium mb-3 font-sans">
+          Sign in to your account
+        </div>
         <span class="text-600 font-medium line-height-3"
           >Don't have an account?</span
         >
-        <a class="font-bold no-underline ml-2 text-purple-700 cursor-pointer"
-          >Create today!</a
+        <a class="font-bold no-underline ml-2 text-primary-800 cursor-pointer"
+          >Create new!</a
         >
       </div>
 
@@ -46,9 +41,42 @@
           >
         </div>
       </div>
-      <button-mexa-button></button-mexa-button>
+      <Button
+        class="google p-2 w-full text-center flex justify-content-center"
+        aria-label="Sign in"
+      >
+        <i class="pi pi-lock px-2"></i>
+        <span class="px-3 text-center">Sign in</span>
+      </Button>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const checked = ref(false);
+const props = defineProps({
+  src: {
+    type: String,
+    default: "",
+  },
+  alt: {
+    type: String,
+    default: "Image",
+  },
+  height: {
+    type: String,
+    default: "",
+  },
+  class: {
+    type: String,
+    default: "w-2",
+  },
+});
+</script>
+<style scoped>
+label,
+span,
+div {
+  font-family: "Monserrat", sans-serif;
+}
+</style>
