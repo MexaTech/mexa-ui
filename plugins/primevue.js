@@ -15,6 +15,8 @@ import Listbox from "primevue/listbox";
 import Menu from "primevue/menu";
 import Menubar from "primevue/menubar";
 import PanelMenu from "primevue/panelmenu";
+import Breadcrumb from "primevue/breadcrumb";
+import Card from "primevue/card";
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp
@@ -33,5 +35,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     .component("Listbox", Listbox)
     .component("Menu", Menu)
     .component("Menubar", Menubar)
-    .component("PanelMenu", PanelMenu);
+    .component("PanelMenu", PanelMenu)
+    .component("Breadcrumb", Breadcrumb)
+    .component("Card", Card);
 });
