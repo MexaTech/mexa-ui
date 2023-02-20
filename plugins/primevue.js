@@ -8,6 +8,8 @@ import AvatarGroup from "primevue/avatargroup";
 import Button from "primevue/button";
 import InputText from "primevue/inputtext";
 import Checkbox from "primevue/checkbox";
+import Dropdown from 'primevue/dropdown';
+import CascadeSelect from 'primevue/cascadeselect';
 import ToastService from "primevue/toastservice";
 import Toast from "primevue/toast";
 import Sidebar from "primevue/sidebar";
@@ -17,6 +19,7 @@ import Menubar from "primevue/menubar";
 import PanelMenu from "primevue/panelmenu";
 import Breadcrumb from "primevue/breadcrumb";
 import Card from "primevue/card";
+
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp
@@ -28,6 +31,8 @@ export default defineNuxtPlugin((nuxtApp) => {
     .component("AvatarGroup", AvatarGroup)
     .component("Button", Button)
     .component("InputText", InputText)
+    .component("Dropdown", Dropdown)
+    .component("CascadeSelect", CascadeSelect)
     .component("Checkbox", Checkbox)
     .component("ToastService", ToastService)
     .component("Toast", Toast)
