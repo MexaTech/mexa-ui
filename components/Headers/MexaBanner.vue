@@ -2,6 +2,7 @@
   <div v-show="visible">
     <div
       class="bg-bluegray-900 text-gray-100 p-3 flex justify-content-between lg:justify-content-center align-items-center flex-wrap"
+      :style="bannerStyle"
     >
       <div class="font-bold mr-8">{{ title }}</div>
       <div class="align-items-center hidden lg:flex">
@@ -45,6 +46,10 @@ const props = defineProps({
       label: "Learn More",
       href: "#",
     },
+  },
+  bannerStyle: {
+    type: String,
+    default: "",
   },
 });
 </script>
