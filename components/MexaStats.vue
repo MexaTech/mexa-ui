@@ -5,7 +5,7 @@
         <div>
           <span class="block text-500 font-medium mb-3">{{ title }}</span>
           <div class="text-900 font-medium text-xl">
-            {{ quantity }} {{ unit }}
+            {{ quantity }}
           </div>
         </div>
         <div
@@ -34,10 +34,6 @@ const props = defineProps({
   quantity: {
     type: String,
     default: 0,
-  },
-  unit: {
-    type: String,
-    default: "",
   },
   icon: {
     type: Object,
