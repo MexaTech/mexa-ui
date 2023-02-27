@@ -1,46 +1,50 @@
 <template>
   <div class="surface-ground px-4 py-5 md:px-6 lg:px-8">
     <div class="grid">
-      <mexa-stats />
-      <mexa-stats
-        title="Comments"
-        quantity="120 Unread"
-        :icon="{
-          name: 'pi-comment',
-          color: 'text-purple-500',
-          background: 'bg-purple-100',
-        }"
-        :detail="{ quantity: 50, label: 'responded', positive: false }"
-      />
-      <mexa-stats
-        title="Orders"
-        quantity="152"
-        :icon="{
-          name: 'pi-shopping-cart',
-          color: 'text-blue-500',
-          background: 'bg-blue-100',
-        }"
-        :detail="{ quantity: 24, label: 'news' }"
-      />
-      <mexa-stats
-        title="Revenue"
-        quantity="$2.100"
-        :icon="{
-          name: 'pi-map-marker',
-          color: 'text-orange-500',
-          background: 'bg-orange-100',
-        }"
-        :detail="{ quantity: '%52+', label: 'since last week' }"
-      />
-      <mexa-stats
-        title="Example"
-        quantity="300 Emails"
-        :icon="{
-          name: 'pi-inbox',
-          color: 'text-cyan-500',
-          background: 'bg-cyan-100',
-        }"
-      />
+      <mexa-stats>
+        <template #title> Orders </template>
+        <template #quantity> 152 </template>
+        <template #icon>
+          <i class="pi pi-shopping-cart text-blue-500 text-xl"></i>
+        </template>
+        <template #details>
+          <span class="text-green-500 font-medium">24 new </span>
+          <span class="text-500">since last visit</span>
+        </template>
+      </mexa-stats>
+      <mexa-stats>
+        <template #title> Revenue </template>
+        <template #quantity> $2.100 </template>
+        <template #icon>
+          <i class="pi pi-map-marker text-orange-500 text-xl"></i>
+        </template>
+        <template #details>
+          <span class="text-green-500 font-medium">%52+ </span>
+          <span class="text-500">since last week</span>
+        </template>
+      </mexa-stats>
+      <mexa-stats>
+        <template #title> Customers </template>
+        <template #quantity> 28441 </template>
+        <template #icon>
+          <i class="pi pi-inbox text-cyan-500 text-xl"></i>
+        </template>
+        <template #details>
+          <span class="text-green-500 font-medium">520 </span>
+          <span class="text-500">newly registered</span>
+        </template>
+      </mexa-stats>
+      <mexa-stats>
+        <template #title> Comments </template>
+        <template #quantity> 152 Unread </template>
+        <template #icon>
+          <i class="pi pi-comment text-purple-500 text-xl"></i>
+        </template>
+        <template #details>
+          <span class="text-green-500 font-medium">85 </span>
+          <span class="text-500">responded</span>
+        </template>
+      </mexa-stats>
     </div>
   </div>
 </template>
