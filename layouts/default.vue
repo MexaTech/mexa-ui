@@ -1,12 +1,48 @@
 <template>
   <div>
-    <mexa-menubar @search_data="search" :image="image" :items="items" />
-    <mexa-sidebar
-      :active="visibleSidebar"
-      :username="username"
-      :avatar="avatar"
-      :items="navigation"
-    />
+    <mexa-menubar :items="items">
+      <template #start>
+        <img
+          alt="alt"
+          src="http://caribbeandigitalgroup.com/CDG.svg"
+          height="40"
+          class="mr-2"
+        />
+      </template>
+      <template #end>
+        <InputText
+          placeholder="Search"
+          type="text"
+          v-model="input_search"
+          @input="executeSearch"
+        />
+      </template>
+    </mexa-menubar>
+    <mexa-sidebar :active="visibleSidebar" :items="navigation">
+      <template #header>
+        <mexa-avatar type="icon" title="pi pi-user" shape="" />
+        <h3>Edsonfer</h3>
+      </template>
+      <template #options>
+        <Button
+          type="button"
+          label="Profile"
+          badge="8"
+          icon="pi pi-users"
+          class="p-button-success"
+          @click="navigateTo"
+        />
+      </template>
+      <template #footer>
+        <mexa-avatar
+          type="image"
+          title="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"
+          size="xlarge"
+          shape="circle"
+        />
+        Mexa-UI
+      </template>
+    </mexa-sidebar>
     <Card>
       <template #content>
         <mexa-breadcrumb />
@@ -16,13 +52,8 @@
   </div>
 </template>
 <script setup>
+import MexaAvatar from "@/components/Avatars/MexaAvatar.vue";
 const visibleSidebar = ref(false);
-const username = ref("Edson");
-const avatar = ref({
-  type: "image",
-  title: "https://via.placeholder.com/300",
-  shape: "circle",
-});
 const navigation = ref([
   {
     key: "1",
@@ -62,62 +93,13 @@ const navigation = ref([
               },
             ],
           },
-          {
-            key: "2_2_1",
-            icon: "pi pi-fw pi-bars",
-            label: "List",
-            command: () => {
-              log_out();
-            },
-          },
         ],
       },
     ],
   },
 ]);
 
-const log_out = () => {
-  console.log("log out...");
-};
-
-const data = ref([
-  {
-    id: 1,
-    name: "Ana",
-  },
-  {
-    id: 2,
-    name: "Emilia",
-  },
-  {
-    id: 3,
-    name: "Ilse",
-  },
-]);
-const data_filter = ref();
-const search_input = ref("");
-
-data_filter.value = data.value;
-
-const search = (input) => {
-  search_input.value = input.value;
-  if (search_input.value == "") {
-    data_filter.value = data.value;
-  } else {
-    const list_filter = data.value.filter((element) => {
-      return element.name
-        .toLowerCase()
-        .includes(search_input.value.toLowerCase());
-    });
-    data_filter.value = list_filter;
-  }
-};
-
-const image = ref({
-  alt: "logo",
-  src: "http://caribbeandigitalgroup.com/CDG.svg",
-  height: "40",
-});
+const search = ref("");
 
 const items = ref([
   {
@@ -166,11 +148,20 @@ const items = ref([
       },
     ],
   },
-  {
-    label: "Quit",
-    icon: "pi pi-fw pi-power-off",
-  },
 ]);
+
+const input_search = ref();
+
+const executeSearch = () => {
+  console.log("execute");
+  console.log(input_search.value);
+};
+
+const navigateTo = () => {
+  console.log("Test...");
+};
+
+const greetingMessage = ref("Hola");
 </script>
 <style>
 .p-card .p-card-content {

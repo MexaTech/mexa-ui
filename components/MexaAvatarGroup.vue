@@ -1,7 +1,6 @@
 <template>
   <div>
     <AvatarGroup>
-      <!-- <avatar-label label="A" size="large" shape="circle" />-->
       <mexa-avatar
         :type="item.type"
         :title="item.title"
