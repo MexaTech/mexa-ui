@@ -1,34 +1,51 @@
 <template>
   <Menubar :model="items">
     <template #start>
-      <img
-        :alt="image.alt"
-        :src="image.src"
-        :height="image.height"
-        class="mr-2"
-      />
+      <slot name="start">
+        <img
+          alt="logo"
+          src="https://primefaces.org/cdn/primevue/images/logo.svg"
+          height="40"
+          class="mr-2"
+        />
+      </slot>
     </template>
     <template #end>
-      <InputText
-        placeholder="Search"
-        type="text"
-        v-model="search"
-        @keyup="searching"
-      />
+      <slot name="end">
+        <ul
+          class="list-none p-0 m-0 flex lg:align-items-center select-none lg:flex-row border-top-1 surface-border lg:border-top-none"
+        >
+          <li class="item-icon">
+            <a
+              class="flex align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150"
+            >
+              <i
+                class="pi pi-bell text-base lg:text-2xl mr-2 lg:mr-0 p-overlay-badge"
+              >
+                <span
+                  id="pv_id_2_badge"
+                  class="p-badge p-component p-badge-danger p-badge-dot"
+                >
+                </span> </i
+            ></a>
+          </li>
+          <li class="item-icon">
+            <a
+              class="flex align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150"
+            >
+              <i
+                class="pi pi-fw pi-power-off text-base lg:text-2xl mr-2 lg:mr-0 p-overlay-badge"
+              ></i
+            ></a>
+          </li>
+        </ul>
+      </slot>
     </template>
   </Menubar>
 </template>
 <script setup>
-const emit = defineEmits(["search_data"]);
+// const emit = defineEmits(["search_data"]);
 const props = defineProps({
-  image: {
-    type: Object,
-    default: {
-      alt: "logo",
-      src: "https://primefaces.org/cdn/primevue/images/logo.svg",
-      height: "40",
-    },
-  },
   items: {
     type: Array,
     default: [
@@ -149,22 +166,18 @@ const props = defineProps({
           },
         ],
       },
-      {
-        label: "Quit",
-        icon: "pi pi-fw pi-power-off",
-      },
     ],
   },
 });
-const search = ref("");
+// const search = ref("");
 
-const searching = () => {
-  emit("search_data", search);
-};
-
-// const items = computed({
-//   get() {
-//     return props.items;
-//   },
-// });
+// const searching = () => {
+//   console.log("searching from component...");
+//   emit("search_data", search);
+// };
 </script>
+<style scoped>
+.item-icon {
+  margin-left: 15px !important;
+}
+</style>

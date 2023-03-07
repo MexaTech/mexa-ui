@@ -1,53 +1,7 @@
 <template>
-  <mexa-menubar @search_data="search" :image="image" :items="items" />
-  <pre>
-    {{ search_input }}
-  </pre>
-  <pre>
-    {{ data_filter }}
-  </pre>
+  <mexa-menubar :items="items" />
 </template>
 <script setup>
-// Search example
-const data = ref([
-  {
-    id: 1,
-    name: "Ana",
-  },
-  {
-    id: 2,
-    name: "Emilia",
-  },
-  {
-    id: 3,
-    name: "Ilse",
-  },
-]);
-const data_filter = ref();
-const search_input = ref("");
-
-data_filter.value = data.value;
-
-const search = (input) => {
-  search_input.value = input.value;
-  if (search_input.value == "") {
-    data_filter.value = data.value;
-  } else {
-    const list_filter = data.value.filter((element) => {
-      return element.name
-        .toLowerCase()
-        .includes(search_input.value.toLowerCase());
-    });
-    data_filter.value = list_filter;
-  }
-};
-
-const image = ref({
-  alt: "logo",
-  src: "http://caribbeandigitalgroup.com/CDG.svg",
-  height: "40",
-});
-
 const items = ref([
   {
     label: "File",
@@ -143,10 +97,6 @@ const items = ref([
         ],
       },
     ],
-  },
-  {
-    label: "Quit",
-    icon: "pi pi-fw pi-power-off",
   },
 ]);
 </script>

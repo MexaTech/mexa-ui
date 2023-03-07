@@ -1,24 +1,39 @@
 <template>
   <div>
     <Sidebar v-model:visible="visible" :baseZIndex="10000">
-      <div class="profile-data">
-        <mexa-avatar
-          :type="avatar.type"
-          :title="avatar.title"
-          :shape="avatar.shape"
-        />
-        <h3>{{ username }}</h3>
-        <Button
-          type="button"
-          label="Profile"
-          badge="8"
-          icon="pi pi-users"
-          class="p-button-primary"
-          @click="navigateTo"
-        />
-      </div>
-      <div class="menu">
-        <mexa-panel-menu :items="items" />
+      <div class="">
+        <div class="profile-data">
+          <slot name="header">
+            <mexa-avatar type="icon" title="pi pi-user" shape="" />
+            <h3>Username</h3>
+          </slot>
+          <slot name="options">
+            <Button
+              type="button"
+              label="Profile"
+              badge="8"
+              icon="pi pi-users"
+              class="p-button-primary"
+              @click="navigateTo"
+            />
+          </slot>
+        </div>
+        <div class="menu overflow-y-auto">
+          <slot name="menu">
+            <mexa-panel-menu :items="items" />
+          </slot>
+        </div>
+        <div class="footer">
+          <slot name="footer">
+            <mexa-avatar
+              type="image"
+              title="https://via.placeholder.com/300"
+              size="xlarge"
+              shape="circle"
+            />
+            Dashboard Template
+          </slot>
+        </div>
       </div>
     </Sidebar>
   </div>
@@ -30,18 +45,6 @@ const props = defineProps({
   active: {
     type: Boolean,
     default: false,
-  },
-  username: {
-    type: String,
-    default: "username",
-  },
-  avatar: {
-    type: Object,
-    default: {
-      type: "icon",
-      title: "pi pi-user",
-      shape: "",
-    },
   },
   items: {
     type: Array,
@@ -109,5 +112,14 @@ watch(
 
 .menu {
   margin-top: 10px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
 }
 </style>

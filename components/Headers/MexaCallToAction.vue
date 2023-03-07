@@ -2,43 +2,26 @@
   <div class="surface-section px-4 py-8 md:px-6 lg:px-8">
     <div class="text-700 text-center">
       <div class="text-blue-600 font-bold mb-3">
-        {{ info }}
+        <slot name="info"> POWERED BY DISCORD </slot>
       </div>
       <div class="text-900 font-bold text-5xl mb-3">
-        {{ title }}
+        <slot name="title"> Join Our Design Community </slot>
       </div>
       <div class="text-700 text-2xl mb-5">
-        {{ subtitle }}
+        <slot name="subtitle">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
+          numquam eligendi quos.
+        </slot>
       </div>
-      <Button
-        :label="btn.label"
-        :icon="btn.icon"
-        class="font-bold px-5 py-3 p-button-raised p-button-rounded white-space-nowrap"
-      ></Button>
+      <div>
+        <slot name="action">
+          <Button
+            label="Join Now"
+            icon="pi pi-discord"
+            class="font-bold px-5 py-3 p-button-raised p-button-rounded white-space-nowrap"
+          ></Button>
+        </slot>
+      </div>
     </div>
   </div>
 </template>
-<script setup>
-const props = defineProps({
-  title: {
-    type: String,
-    default: "Join Our Design Community",
-  },
-  subtitle: {
-    type: String,
-    default:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit numquam eligendi quos.",
-  },
-  info: {
-    type: String,
-    default: "POWERED BY DISCORD",
-  },
-  btn: {
-    type: Object,
-    default: {
-      label: "Join Now",
-      icon: "pi pi-discord",
-    },
-  },
-});
-</script>
