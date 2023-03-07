@@ -1,7 +1,6 @@
 <template>
   <div class="content-title">
     <h1 class="title">{{ title }}</h1>
-    <button @click="$emit('mi-evento')">Emitir evento</button>
   </div>
 </template>
 <script setup>

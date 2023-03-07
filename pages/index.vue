@@ -1,6 +1,9 @@
 <template>
   <div>
-    <mexa-title @mi-evento="handleEvento"></mexa-title>
+    <h1>Page</h1>
+    <!-- <mexa-title /> -->
+    <button @click="actualizar">Up</button>
+    <pre>{{ dataItems.getItemsFiltered }}</pre>
   </div>
 </template>
 <script setup>
@@ -8,22 +11,16 @@ definePageMeta({
   layout: "default",
 });
 
-const data = ref([
-  {
-    id: 1,
-    name: "Ana",
-  },
-  {
-    id: 2,
-    name: "Emilia",
-  },
-  {
-    id: 3,
-    name: "Ilse",
-  },
-]);
+// Default use store
+// import { useCounterStore } from "~~/stores/example";
+// const store = useCounterStore();
+// console.log(store.name);
+// console.log(store.count);
+// store.increment();
+// console.log(store.count);
+// console.log(store.doubleCount);
 
-const handleEvento = () => {
-  console.log("La función del slot ha sido ejecutada.");
-};
+import { useItemsStore } from "@/stores/items";
+const dataItems = useItemsStore();
+dataItems.items = [{ name: "Edson" }, { name: "Allison" }, { name: "Pamela" }];
 </script>

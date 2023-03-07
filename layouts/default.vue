@@ -10,12 +10,7 @@
         />
       </template>
       <template #end>
-        <InputText
-          placeholder="Search"
-          type="text"
-          v-model="input_search"
-          @input="executeSearch"
-        />
+        <mexa-search @search_data="search"></mexa-search>
       </template>
     </mexa-menubar>
     <mexa-sidebar :active="visibleSidebar" :items="navigation">
@@ -46,6 +41,12 @@
     <Card>
       <template #content>
         <mexa-breadcrumb />
+        <hr />
+        <h1>Layout</h1>
+        <pre>
+          {{ data_filter }}
+        </pre>
+        <hr />
         <slot />
       </template>
     </Card>
@@ -99,8 +100,6 @@ const navigation = ref([
   },
 ]);
 
-const search = ref("");
-
 const items = ref([
   {
     label: "Menu",
@@ -150,16 +149,47 @@ const items = ref([
   },
 ]);
 
-const input_search = ref();
+import { useItemsStore } from "@/stores/items";
+const myStore = useItemsStore();
+console.log(myStore.items);
 
-const executeSearch = () => {
+const data = computed({
+  get() {
+    return myStore.items;
+  },
+});
+
+const data_filter = ref();
+data_filter.value = data.value;
+myStore.itemsFiltered = data_filter.value;
+const search_input = ref("");
+
+const search = (input) => {
   console.log("execute");
-  console.log(input_search.value);
+  console.log(input.value);
+  // Cada page puede asignar datos al data store
+  // Aqui vamos a estar realizando una busqueda de la data, que tenga el store
+  search_input.value = input.value;
+  if (search_input.value == "") {
+    data_filter.value = data.value;
+  } else {
+    const list_filter = data.value.filter((element) => {
+      return element.name
+        .toLowerCase()
+        .includes(search_input.value.toLowerCase());
+    });
+    data_filter.value = list_filter;
+  }
+  myStore.itemsFiltered = data_filter.value;
 };
 
 const navigateTo = () => {
   console.log("Test...");
 };
+
+onMounted(() => {
+  console.log("Updated in layout...");
+});
 
 const greetingMessage = ref("Hola");
 </script>
