@@ -21,10 +21,6 @@ const props = defineProps({
 });
 
 const menuItems = props.items;
-
-onMounted(async () => {
-  console.log("onMounted");
-});
 </script>
 <style>
 /* .p-panelmenu .p-panelmenu-content {
