@@ -1,5 +1,5 @@
 <template lang="">
-  <forms-mexa-signin v-bind="img"></forms-mexa-signin>
+  <forms-mexa-registration v-bind="img"></forms-mexa-registration>
 </template>
 <script setup>
 const img = ref({
