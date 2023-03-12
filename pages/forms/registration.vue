@@ -1,11 +1,8 @@
-<template lang="">
-  <forms-mexa-registration v-bind="img"></forms-mexa-registration>
+<template>
+  <div class="flex align-items-center justify-content-center">
+    <div class="lg:w-3 mt-8">
+      <forms-mexa-registration></forms-mexa-registration>
+    </div>
+  </div>
 </template>
-<script setup>
-const img = ref({
-  src: "/img/logo.png",
-  alt: "Image",
-  height: "50",
-  class: "mb-3 w-2",
-});
-</script>
+<script setup></script>
