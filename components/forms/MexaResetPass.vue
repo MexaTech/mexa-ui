@@ -1,55 +1,46 @@
-<template lang="">
+<template>
   <div class="flex align-items-center justify-content-center">
-    <div class="surface-card p-4 shadow-2 border-round w-full lg:w-3 mt-8">
+    <div class="surface-card p-4 shadow-2 border-round w-full">
       <div class="text-center mb-5">
-        <img :src="src" :alt="alt" :class="class" />
+        <slot name="logo">
+          <img
+            src="https://blocks.primevue.org/images/blocks/hero/hero-1.png"
+            alt="Image"
+            class="mb-3 w-2"
+          />
+        </slot>
         <div class="text-900 text-3xl font-medium mb-3 font-sans">
-          Reset Password
+          <slot name="title"> Reset Password </slot>
         </div>
-        <span class="text-600 font-medium line-height-3"
-          >We will send you an email with the steps to reset your password.</span
-        >
-
+        <span class="text-600 font-medium line-height-3">
+          <slot name="subtitle">
+            We will send you an email with the steps to reset your password.
+          </slot>
+        </span>
       </div>
 
       <div>
-        <label for="email1" class="block text-900 font-medium mb-2"
-          >Email</label
-        >
-        <InputText id="email1" type="text" class="w-full mb-3" />
+        <slot name="form">
+          <label for="email1" class="block text-900 font-medium mb-2"
+            >Email</label
+          >
+          <InputText id="email1" type="text" class="w-full mb-3" />
+        </slot>
       </div>
-      <Button
-        class="google p-2 w-full text-center flex justify-content-center"
-        aria-label="Sign in"
-      >
-        <i class="pi pi-lock px-2"></i>
-        <span class="px-3 text-center">Reset password</span>
-      </Button>
+      <slot name="btn">
+        <Button
+          class="google p-2 w-full text-center flex justify-content-center"
+          aria-label="Sign in"
+        >
+          <i class="pi pi-lock px-2"></i>
+          <span class="px-3 text-center">Reset password</span>
+        </Button>
+      </slot>
     </div>
   </div>
 </template>
 
-<script setup>
-const checked = ref(false);
-const props = defineProps({
-  src: {
-    type: String,
-    default: "",
-  },
-  alt: {
-    type: String,
-    default: "Image",
-  },
-  height: {
-    type: String,
-    default: "",
-  },
-  class: {
-    type: String,
-    default: "w-2",
-  },
-});
-</script>
+<script setup></script>
 <style scoped>
 label,
 span,

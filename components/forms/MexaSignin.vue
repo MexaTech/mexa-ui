@@ -1,81 +1,70 @@
-<template lang="">
+<template>
   <div class="flex align-items-center justify-content-center">
-    <div class="surface-card p-4 shadow-2 border-round w-full lg:w-3 mt-8">
+    <div class="surface-card p-4 shadow-2 border-round w-full">
       <div class="text-center mb-5">
-        <img :src="src" :alt="alt" :class="class" />
+        <slot name="logo">
+          <img
+            src="https://blocks.primevue.org/images/blocks/hero/hero-1.png"
+            alt="Image"
+            class="mb-3 w-2"
+          />
+        </slot>
         <div class="text-900 text-3xl font-medium mb-3 font-sans">
-          Sign in to your account
+          <slot name="title"> Sign in to your account </slot>
         </div>
-        <span class="text-600 font-medium line-height-3"
-          >Don't have an account?</span
-        >
-
-        <router-link
-          to="/forms/registration"
-          class="font-bold no-underline ml-2 text-primary-800 cursor-pointer"
-          >Create new!</router-link
-        >
+        <span class="text-600 font-medium line-height-3">
+          <slot name="subtitle"> Don't have an account? </slot>
+        </span>
+        <slot name="registration">
+          <router-link
+            to="/forms/registration"
+            class="font-bold no-underline ml-2 text-primary-800 cursor-pointer"
+            >Create new!</router-link
+          >
+        </slot>
       </div>
-
       <div>
-        <label for="email1" class="block text-900 font-medium mb-2"
-          >Email</label
-        >
-        <InputText id="email1" type="text" class="w-full mb-3" />
+        <slot name="form">
+          <label for="email1" class="block text-900 font-medium mb-2"
+            >Email</label
+          >
+          <InputText id="email1" type="text" class="w-full mb-3" />
 
-        <label for="password1" class="block text-900 font-medium mb-2"
-          >Password</label
-        >
-        <InputText id="password1" type="password" class="w-full mb-3" />
+          <label for="password1" class="block text-900 font-medium mb-2"
+            >Password</label
+          >
+          <InputText id="password1" type="password" class="w-full mb-3" />
+        </slot>
 
         <div class="flex align-items-center justify-content-between mb-6">
           <div class="flex align-items-center">
-            <Checkbox
-              id="rememberme1"
-              :binary="true"
-              v-model="checked"
-              class="mr-2"
-            ></Checkbox>
-            <label for="rememberme1">Remember me</label>
+            <slot name="rememberme">
+              <Checkbox id="rememberme1" :binary="true" class="mr-2"></Checkbox>
+              <label for="rememberme1">Remember me</label>
+            </slot>
           </div>
-          <a
-            class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer"
-            >Forgot password?</a
-          >
+          <slot name="reset">
+            <a
+              class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer"
+              >Forgot password?</a
+            >
+          </slot>
         </div>
       </div>
-      <Button
-        class="google p-2 w-full text-center flex justify-content-center"
-        aria-label="Sign in"
-      >
-        <i class="pi pi-lock px-2"></i>
-        <span class="px-3 text-center">Sign in</span>
-      </Button>
+      <slot name="btn">
+        <Button
+          class="google p-2 w-full text-center flex justify-content-center"
+          aria-label="Sign in"
+        >
+          <i class="pi pi-lock px-2"></i>
+          <span class="px-3 text-center">Sign in</span>
+        </Button>
+      </slot>
     </div>
   </div>
 </template>
 
-<script setup>
-const checked = ref(false);
-const props = defineProps({
-  src: {
-    type: String,
-    default: "",
-  },
-  alt: {
-    type: String,
-    default: "Image",
-  },
-  height: {
-    type: String,
-    default: "",
-  },
-  class: {
-    type: String,
-    default: "w-2",
-  },
-});
-</script>
+<script setup></script>
 <style scoped>
 label,
 span,
