@@ -41,12 +41,6 @@
     <Card>
       <template #content>
         <mexa-breadcrumb />
-        <hr />
-        <h1>Layout</h1>
-        <pre>
-          {{ data_filter }}
-        </pre>
-        <hr />
         <slot />
       </template>
     </Card>

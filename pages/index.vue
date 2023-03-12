@@ -1,10 +1,8 @@
 <template>
   <div>
-    <h1>Page</h1>
-    <!-- <mexa-title /> -->
-    <button @click="actualizar">Up</button>
+    <mexa-title />
     <pre>{{ dataItems.getItemsFiltered }}</pre>
-
+    <mexa-hero></mexa-hero>
     <div class="grid">
       <div class="col-12 lg:col-4">
         <div class="p-3 h-full">
