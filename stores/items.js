@@ -10,4 +10,9 @@ export const useItemsStore = defineStore("items", {
     getItems: (state) => state.items,
     getItemsFiltered: (state) => state.itemsFiltered,
   },
+  actions: {
+    testRefresh() {
+      console.log("testRefreshStore...");
+    },
+  },
 });

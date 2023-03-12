@@ -151,7 +151,7 @@ const items = ref([
 
 import { useItemsStore } from "@/stores/items";
 const myStore = useItemsStore();
-console.log(myStore.items);
+// console.log(myStore.items);
 
 const data = computed({
   get() {
@@ -165,8 +165,6 @@ myStore.itemsFiltered = data_filter.value;
 const search_input = ref("");
 
 const search = (input) => {
-  console.log("execute");
-  console.log(input.value);
   // Cada page puede asignar datos al data store
   // Aqui vamos a estar realizando una busqueda de la data, que tenga el store
   search_input.value = input.value;
@@ -187,11 +185,13 @@ const navigateTo = () => {
   console.log("Test...");
 };
 
-onMounted(() => {
-  console.log("Updated in layout...");
-});
+// onMounted(() => {
+//   console.log("onMounted in layout..");
+// });
 
-const greetingMessage = ref("Hola");
+// onUpdated(() => {
+//   console.log("onUpdated in layout");
+// });
 </script>
 <style>
 .p-card .p-card-content {
