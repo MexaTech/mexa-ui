@@ -9,6 +9,7 @@
   </div>
 </template>
 <script setup>
+import { ref, reactive, computed, watch } from "vue";
 const emit = defineEmits(["search_data"]);
 const search = ref("");
 const searching = () => {

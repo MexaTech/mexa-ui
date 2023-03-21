@@ -145,7 +145,6 @@ const items = ref([
 
 import { useItemsStore } from "@/stores/items";
 const myStore = useItemsStore();
-// console.log(myStore.items);
 
 const data = computed({
   get() {

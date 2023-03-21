@@ -14,7 +14,6 @@
               badge="8"
               icon="pi pi-users"
               class="p-button-primary"
-              @click="navigateTo"
             />
           </slot>
         </div>
@@ -39,8 +38,8 @@
   </div>
 </template>
 <script setup>
-import MexaAvatar from "@/components/Avatars/MexaAvatar.vue";
-const router = useRouter();
+import { ref, reactive, computed, watch } from "vue";
+import MexaAvatar from "./Avatars/MexaAvatar.vue";
 const props = defineProps({
   active: {
     type: Boolean,
@@ -92,10 +91,6 @@ const statusSidebar = computed({
     return props.active;
   },
 });
-
-const navigateTo = () => {
-  router.push("/test");
-};
 
 watch(
   statusSidebar,
