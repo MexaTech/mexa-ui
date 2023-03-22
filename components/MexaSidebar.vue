@@ -39,8 +39,7 @@
 </template>
 <script setup>
 import { ref, reactive, computed, watch } from "vue";
-// import MexaAvatar from "./Avatars/MexaAvatar.vue";
-import MexaAvatar from "@/components/Avatars/MexaAvatar.vue";
+import MexaAvatar from "./Avatars/MexaAvatar.vue";
 const props = defineProps({
   active: {
     type: Boolean,
