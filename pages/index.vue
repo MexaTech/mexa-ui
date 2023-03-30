@@ -55,11 +55,11 @@
   </div>
 </template>
 <script setup>
+import { useItemsStore } from "@/stores/items";
 definePageMeta({
   layout: "default",
 });
 
-import { useItemsStore } from "@/stores/items";
 const dataItems = useItemsStore();
 dataItems.items = [{ name: "Edson" }, { name: "Allison" }, { name: "Pamela" }];
 const mival = ref(false);

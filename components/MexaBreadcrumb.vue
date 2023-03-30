@@ -3,11 +3,12 @@
 </template>
 <script setup>
 import { ref, reactive, computed, watch } from "vue";
+import { useRouter, useRoute } from "vue-router";
 const home = ref({
   icon: "pi pi-home",
   to: "/",
 });
-import { useRouter, useRoute } from "vue-router";
+
 const routes = useRoute();
 const items = ref([]);
 const path = routes.path.split("/");

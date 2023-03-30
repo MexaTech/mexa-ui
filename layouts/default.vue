@@ -47,6 +47,7 @@
   </div>
 </template>
 <script setup>
+import { useItemsStore } from "@/stores/items";
 import MexaAvatar from "@/components/Avatars/MexaAvatar.vue";
 const visibleSidebar = ref(false);
 const navigation = ref([
@@ -143,7 +144,6 @@ const items = ref([
   },
 ]);
 
-import { useItemsStore } from "@/stores/items";
 const myStore = useItemsStore();
 
 const data = computed({
