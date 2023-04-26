@@ -29,13 +29,14 @@
         />
       </template>
       <template #footer>
-        <mexa-avatar
+        <!-- <mexa-avatar
           type="image"
           title="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"
           size="xlarge"
           shape="circle"
         />
-        Mexa-UI
+        Mexa-UI -->
+        &nbsp;
       </template>
     </mexa-sidebar>
     <Card>
@@ -53,45 +54,95 @@ const visibleSidebar = ref(false);
 const navigation = ref([
   {
     key: "1",
-    label: "Vue Website",
-    icon: "pi pi-external-link",
-    url: "https://vuejs.org/",
+    label: "Avatar",
+    icon: "pi pi-circle-fill",
+    url: "/avatars",
   },
   {
     key: "2",
-    label: "Users",
-    icon: "pi pi-fw pi-user",
+    label: "Footers",
+    icon: "pi pi-circle-fill",
+    url: "/footers",
+  },
+  {
+    key: "3",
+    label: "Forms",
+    icon: "pi pi-circle-fill",
     items: [
       {
-        key: "2_0",
-        label: "New",
-        icon: "pi pi-fw pi-user-plus",
+        key: "3_0",
+        label: "Profile",
+        icon: "pi pi-fw pi-circle-fill",
+        url: "/forms/profile",
       },
       {
-        key: "2_1",
-        label: "Delete",
-        icon: "pi pi-fw pi-user-minus",
+        key: "3_1",
+        label: "Registration",
+        icon: "pi pi-fw pi-circle-fill",
+        url: "/forms/registration",
       },
       {
-        key: "2_2",
-        label: "Search",
-        icon: "pi pi-fw pi-users",
-        items: [
-          {
-            key: "2_2_0",
-            label: "Filter",
-            icon: "pi pi-fw pi-filter",
-            items: [
-              {
-                key: "2_2_0_0",
-                label: "Print",
-                icon: "pi pi-fw pi-print",
-              },
-            ],
-          },
-        ],
+        key: "3_2",
+        label: "Resetpass",
+        icon: "pi pi-fw pi-circle-fill",
+        url: "/forms/resetpass",
+      },
+      {
+        key: "3_3",
+        label: "Signin",
+        icon: "pi pi-fw pi-circle-fill",
+        url: "/forms/signin",
       },
     ],
+  },
+  {
+    key: "4",
+    label: "Headers",
+    icon: "pi pi-circle-fill",
+    url: "/headers",
+  },
+  {
+    key: "4",
+    label: "Images",
+    icon: "pi pi-circle-fill",
+    url: "/images",
+  },
+  {
+    key: "5",
+    label: "Menus",
+    icon: "pi pi-circle-fill",
+    items: [
+      {
+        key: "5_0",
+        label: "Menubar",
+        icon: "pi pi-fw pi-circle-fill",
+        url: "/menus/menubar",
+      },
+      {
+        key: "5_1",
+        label: "Panel Menu",
+        icon: "pi pi-fw pi-circle-fill",
+        url: "/menus/panel-menu",
+      },
+    ],
+  },
+  {
+    key: "6",
+    label: "Stats",
+    icon: "pi pi-circle-fill",
+    url: "/stats",
+  },
+  {
+    key: "7",
+    label: "Toast",
+    icon: "pi pi-circle-fill",
+    url: "/toast",
+  },
+  {
+    key: "8",
+    label: "Slider",
+    icon: "pi pi-circle-fill",
+    url: "/slider",
   },
 ]);
 
