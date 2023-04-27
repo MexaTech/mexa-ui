@@ -54,72 +54,79 @@ const visibleSidebar = ref(false);
 const navigation = ref([
   {
     key: "1",
-    label: "Avatar",
-    icon: "pi pi-circle-fill",
-    url: "/avatars",
-  },
-  {
-    key: "2",
-    label: "Footers",
-    icon: "pi pi-circle-fill",
-    url: "/footers",
-  },
-  {
-    key: "3",
     label: "Forms",
     icon: "pi pi-circle-fill",
     items: [
       {
-        key: "3_0",
+        key: "1_0",
         label: "Profile",
         icon: "pi pi-fw pi-circle-fill",
         url: "/forms/profile",
       },
       {
-        key: "3_1",
+        key: "1_1",
         label: "Registration",
         icon: "pi pi-fw pi-circle-fill",
         url: "/forms/registration",
       },
       {
-        key: "3_2",
+        key: "1_2",
         label: "Resetpass",
         icon: "pi pi-fw pi-circle-fill",
         url: "/forms/resetpass",
       },
       {
-        key: "3_3",
+        key: "1_3",
         label: "Signin",
         icon: "pi pi-fw pi-circle-fill",
         url: "/forms/signin",
       },
+      {
+        key: "1_4",
+        label: "Contact",
+        icon: "pi pi-fw pi-circle-fill",
+        url: "/forms/contact",
+      },
     ],
   },
   {
-    key: "4",
+    key: "2",
     label: "Headers",
     icon: "pi pi-circle-fill",
-    url: "/headers",
+    items: [
+      {
+        key: "2_0",
+        label: "Call to Action",
+        icon: "pi pi-circle-fill",
+        url: "/headers/calltoaction",
+      },
+      {
+        key: "2_1",
+        label: "Hero",
+        icon: "pi pi-circle-fill",
+        url: "/headers/hero",
+      },
+      {
+        key: "2_2",
+        label: "Prices",
+        icon: "pi pi-circle-fill",
+        url: "/headers/prices",
+      },
+    ],
   },
   {
-    key: "4",
-    label: "Images",
-    icon: "pi pi-circle-fill",
-    url: "/images",
-  },
-  {
-    key: "5",
+    key: "3",
     label: "Menus",
     icon: "pi pi-circle-fill",
     items: [
       {
-        key: "5_0",
+        key: "3_0",
         label: "Menubar",
         icon: "pi pi-fw pi-circle-fill",
         url: "/menus/menubar",
       },
       {
-        key: "5_1",
+        key: "3_1",
         label: "Panel Menu",
         icon: "pi pi-fw pi-circle-fill",
         url: "/menus/panel-menu",
@@ -127,22 +134,91 @@ const navigation = ref([
     ],
   },
   {
+    key: "4",
+    label: "Components Generals",
+    icon: "pi pi-circle-fill",
+    items: [
+      {
+        key: "4_0",
+        label: "Stats",
+        icon: "pi pi-circle-fill",
+        url: "/stats",
+      },
+      {
+        key: "4_1",
+        label: "Toast",
+        icon: "pi pi-circle-fill",
+        url: "/toast",
+      },
+      {
+        key: "4_2",
+        label: "Slider",
+        icon: "pi pi-circle-fill",
+        url: "/slider",
+      },
+      {
+        key: "4_3",
+        label: "Avatar",
+        icon: "pi pi-circle-fill",
+        url: "/avatars",
+      },
+      {
+        key: "4_4",
+        label: "Images",
+        icon: "pi pi-circle-fill",
+        url: "/images",
+      },
+      {
+        key: "4_5",
+        label: "Footers",
+        icon: "pi pi-circle-fill",
+        url: "/footers",
+      },
+      {
+        key: "4_6",
+        label: "Newsletter",
+        icon: "pi pi-circle-fill",
+        url: "/newsletter",
+      },
+    ],
+  },
+  {
+    key: "5",
+    label: "Features",
+    icon: "pi pi-circle-fill",
+    items: [
+      {
+        key: "5_0",
+        label: "Feature Grid",
+        icon: "pi pi-fw pi-circle-fill",
+        url: "/features/feature-grid",
+      },
+      {
+        key: "5_1",
+        label: "Feature Grid List",
+        icon: "pi pi-fw pi-circle-fill",
+        url: "/features/feature-grid-list",
+      },
+    ],
+  },
+  {
     key: "6",
-    label: "Stats",
+    label: "Blogs",
     icon: "pi pi-circle-fill",
-    url: "/stats",
-  },
-  {
-    key: "7",
-    label: "Toast",
-    icon: "pi pi-circle-fill",
-    url: "/toast",
-  },
-  {
-    key: "8",
-    label: "Slider",
-    icon: "pi pi-circle-fill",
-    url: "/slider",
+    items: [
+      {
+        key: "6_0",
+        label: "Card blog",
+        icon: "pi pi-fw pi-circle-fill",
+        url: "/blogs",
+      },
+      {
+        key: "6_0",
+        label: "Card post",
+        icon: "pi pi-fw pi-circle-fill",
+        url: "/blogs/card-post",
+      },
+    ],
   },
 ]);
 

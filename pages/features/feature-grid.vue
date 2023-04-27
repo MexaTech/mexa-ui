@@ -1,0 +1,3 @@
+<template>
+  <FeaturesFeatureGrid />
+</template>
