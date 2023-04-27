@@ -220,6 +220,19 @@ const navigation = ref([
       },
     ],
   },
+  {
+    key: "7",
+    label: "E-Commerce",
+    icon: "pi pi-circle-fill",
+    items: [
+      {
+        key: "7_0",
+        label: "Card product",
+        icon: "pi pi-fw pi-circle-fill",
+        url: "/ecommerce/card-product",
+      },
+    ],
+  },
 ]);
 
 const items = ref([
