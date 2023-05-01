@@ -231,6 +231,12 @@ const navigation = ref([
         icon: "pi pi-fw pi-circle-fill",
         url: "/ecommerce/card-product",
       },
+      {
+        key: "7_1",
+        label: "Product Overview",
+        icon: "pi pi-fw pi-circle-fill",
+        url: "/ecommerce/product-overview",
+      },
     ],
   },
 ]);
