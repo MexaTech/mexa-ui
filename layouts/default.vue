@@ -249,6 +249,12 @@ const navigation = ref([
         icon: "pi pi-fw pi-circle-fill",
         url: "/ecommerce/category",
       },
+      {
+        key: "7_4",
+        label: "Promo Section",
+        icon: "pi pi-fw pi-circle-fill",
+        url: "/ecommerce/promo-section",
+      },
     ],
   },
 ]);
