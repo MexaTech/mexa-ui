@@ -255,6 +255,12 @@ const navigation = ref([
         icon: "pi pi-fw pi-circle-fill",
         url: "/ecommerce/promo-section",
       },
+      {
+        key: "7_5",
+        label: "Shopping Cart",
+        icon: "pi pi-fw pi-circle-fill",
+        url: "/ecommerce/shopping-cart",
+      },
     ],
   },
 ]);
