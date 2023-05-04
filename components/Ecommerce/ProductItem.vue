@@ -14,7 +14,10 @@
       <div class="text-600 text-sm mb-3">
         <span> {{ product.option }} </span>
       </div>
-      <div class="flex align-items-center justify-content-between">
+      <div
+        class="flex align-items-center justify-content-between"
+        v-if="!summary"
+      >
         <span
           class="p-inputnumber p-component p-inputwrapper p-inputwrapper-filled p-inputnumber-buttons-horizontal border-1 surface-border border-round"
           spinnermode="horizontal"
@@ -43,6 +46,12 @@
           <EcommerceButtonRemove />
         </slot>
       </div>
+      <div
+        class="flex align-items-center justify-content-between"
+        v-show="summary"
+      >
+        <span class="text-900 font-medium">Quantity 1</span>
+      </div>
     </div>
   </li>
 </template>
@@ -51,13 +60,17 @@ const props = defineProps({
   product: {
     type: Object,
     default: {
-      title: "Product Name",
+      name: "Product Name",
       price: 10.0,
       option: "Blue | XL",
       quantity: 1,
       image:
         "https://blocks.primevue.org/images/blocks/ecommerce/shoppingcart/shopping-cart-3-1.png",
     },
+  },
+  summary: {
+    type: Boolean,
+    default: false,
   },
 });
 </script>
