@@ -261,6 +261,12 @@ const navigation = ref([
         icon: "pi pi-fw pi-circle-fill",
         url: "/ecommerce/shopping-cart",
       },
+      {
+        key: "7_6",
+        label: "Checkout Form",
+        icon: "pi pi-fw pi-circle-fill",
+        url: "/ecommerce/checkout-form",
+      },
     ],
   },
 ]);

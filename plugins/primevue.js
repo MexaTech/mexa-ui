@@ -20,6 +20,7 @@ import PanelMenu from "primevue/panelmenu";
 import Breadcrumb from "primevue/breadcrumb";
 import Card from "primevue/card";
 import Dialog from "primevue/dialog";
+import RadioButton from "primevue/radiobutton";
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp
@@ -43,5 +44,6 @@ export default defineNuxtPlugin((nuxtApp) => {
     .component("PanelMenu", PanelMenu)
     .component("Breadcrumb", Breadcrumb)
     .component("Card", Card)
-    .component("Dialog", Dialog);
+    .component("Dialog", Dialog)
+    .component("RadioButton", RadioButton);
 });
