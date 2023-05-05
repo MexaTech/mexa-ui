@@ -1,0 +1,3 @@
+<template>
+  <mexa-newsletter />
+</template>
